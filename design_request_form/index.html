@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ฟอร์มเสนอรายละเอียดงานออกแบบกราฟิก</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>ฟอร์มเสนอรายละเอียดงานออกแบบกราฟิก</h1>
+    <form action="submit_design_request.php" method="post" enctype="multipart/form-data">
+        <label for="work_type">รูปแบบงาน:</label>
+        <select id="work_type" name="work_type" required>
+            <option value="logo">โลโก้</option>
+            <option value="poster">โปสเตอร์</option>
+            <option value="infographic">อินโฟกราฟิก</option>
+        </select>
+
+        <label for="color_tone">โทนสีที่ต้องการใช้:</label>
+        <input type="text" id="color_tone" name="color_tone" placeholder="ระบุโทนสี เช่น สีฟ้า-ขาว" required>
+
+        <label for="sample_work">ตัวอย่างงาน (อัปโหลดรูปภาพ):</label>
+        <input type="file" id="sample_work" name="sample_work" accept="image/*">
+
+        <label for="start_date">วันที่เริ่มต้น:</label>
+        <input type="date" id="start_date" name="start_date" required>
+
+        <label for="end_date">วันที่สิ้นสุด:</label>
+        <input type="date" id="end_date" name="end_date" required>
+
+        <label for="details">รายละเอียดของงาน:</label>
+        <textarea id="details" name="details" rows="5" placeholder="ระบุรายละเอียดเพิ่มเติมเกี่ยวกับงาน" required></textarea>
+
+        <button type="submit">ส่งคำขอ</button>
+    </form>
+</body>
+</html>
